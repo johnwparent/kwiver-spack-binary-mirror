@@ -1,14 +1,14 @@
 name: Kwiver
 
 on:
-  push:
-    branches:
-      - main
-      - releases/**
-  pull_request:
-    branches:
-      - main
-      - releases/**
+  # push:
+  #   branches:
+  #     - main
+  #     - releases/**
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - releases/**
   workflow_dispatch:
 
 
@@ -30,7 +30,7 @@ jobs:
         uses: docker/setup-qemu-action@v3
       - name: Run Docker Image
         run: |
-          docker run --rm --platform linux/${{ matrix.arch }} -v $(pwd):/utils kwiver-spack-build-base:${{ matrix.arch }} /utils/create_buildcache.sh
+          docker run --rm --platform linux/${{ matrix.arch }} -v $(pwd):/utils ghcr.io/${{ github.repository }}/kwiver-spack-build-base:${{ matrix.arch }} /utils/create_buildcache.sh
 
   make-mac-buildcache:
     runs-on: macos-latest
