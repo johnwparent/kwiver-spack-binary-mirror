@@ -1,14 +1,14 @@
 name: Kwiver
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  #     - releases/**
-  # pull_request:
-  #   branches:
-  #     - main
-  #     - releases/**
+  push:
+    branches:
+      - main
+      - releases/**
+  pull_request:
+    branches:
+      - main
+      - releases/**
   workflow_dispatch:
 
 
