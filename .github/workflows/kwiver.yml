@@ -44,8 +44,8 @@ jobs:
       - name: Setup Spack
         uses: spack/setup-spack@v3
         with:
-          spack_ref: releases/
-          packages_ref: 
+          spack_ref: releases/v1.1
+          packages_ref: releases/v2025.06
           buildcache: true
       - name: Build Binaries
         shell: spack-bash {0}
