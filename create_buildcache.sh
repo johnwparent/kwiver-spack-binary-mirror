@@ -1,6 +1,7 @@
 #! /bin/bash
 
 git clone --branch spackify-fletch-support --single-branch https://gitlab.kitware.com/kwiver/kwiver
+export SPACK_ROOT=$(pwd)/spack
 source spack/share/spack/setup-env.sh
 
 spack env activate ./kwiver
